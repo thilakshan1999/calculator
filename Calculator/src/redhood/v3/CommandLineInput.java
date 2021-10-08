@@ -1,0 +1,23 @@
+package redhood.v3;
+
+public class CommandLineInput {
+
+  private final String[] args;
+
+  public CommandLineInput(String[] argument)
+  {
+    this.args=argument;
+  }
+  public String getOperator() {
+    if (args.length == 0) {
+      System.out.println("Please provide the operation as argument");
+      return "";
+    }
+    String operator = args[0];
+    if (!(operator.equals("add") || operator.equals("sub") || operator.equals("mul"))) {
+      System.out.println("Plese provide add ,sub or mul as operational argument");
+      return "";
+    }
+    return operator;
+  }
+}

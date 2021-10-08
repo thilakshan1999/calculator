@@ -17,8 +17,8 @@ public class Main {
             return;
         }
         List<String> numberStr = Files.readAllLines(Paths.get("Calculator/src/redhood/v2/Number.txt"));
-        Double number1 = Double.valueOf(numberStr.get(0));
-        Double number2 = Double.valueOf(numberStr.get(1));
+        double number1 = Double.valueOf(numberStr.get(0));
+        double number2 = Double.valueOf(numberStr.get(1));
 
 
         double result = 0;
