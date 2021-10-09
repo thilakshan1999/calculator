@@ -11,7 +11,7 @@ public class Main {
         int data[] = new int[10];
         int output = 0;
         try {
-            File Obj = new File("Calculator/src/redhood/v1/file.txt");
+            File Obj = new File("src/redhood/v1/file.txt");
             Scanner myReader = new Scanner(Obj);
             while (myReader.hasNextInt()) {
                 data[i] = myReader.nextInt();

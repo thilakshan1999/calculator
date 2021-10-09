@@ -1,4 +1,4 @@
-package redhood.v3;
+package redhood.v4;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,7 +8,7 @@ import java.util.List;
 public class FileReader {
 
     public double[] getNumber() throws IOException {
-        List<String> numberStr = Files.readAllLines(Paths.get("Calculator/src/redhood/v3/Number.txt"));
+        List<String> numberStr = Files.readAllLines(Paths.get("Number.txt"));
 
         double number1 = Double.valueOf(numberStr.get(0));
         double number2 = Double.valueOf(numberStr.get(1));

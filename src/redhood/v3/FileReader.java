@@ -1,14 +1,14 @@
-package redhood.v5.repository;
+package redhood.v3;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class FileNumberRepository implements NumberRepository {
+public class FileReader {
 
     public double[] getNumber() throws IOException {
-        List<String> numberStr = Files.readAllLines(Paths.get("Calculator/src/redhood/v4/Number.txt"));
+        List<String> numberStr = Files.readAllLines(Paths.get("Number.txt"));
 
         double number1 = Double.valueOf(numberStr.get(0));
         double number2 = Double.valueOf(numberStr.get(1));

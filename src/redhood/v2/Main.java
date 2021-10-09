@@ -16,7 +16,7 @@ public class Main {
             System.out.println("Plese provide add ,sub or mul as operational argument");
             return;
         }
-        List<String> numberStr = Files.readAllLines(Paths.get("Calculator/src/redhood/v2/Number.txt"));
+        List<String> numberStr = Files.readAllLines(Paths.get("Number.txt"));
         double number1 = Double.valueOf(numberStr.get(0));
         double number2 = Double.valueOf(numberStr.get(1));
 
