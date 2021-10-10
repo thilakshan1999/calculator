@@ -6,9 +6,8 @@ import redhood.v5.operation.InvalidOperatioException;
 import redhood.v5.operation.Operation;
 import redhood.v5.operation.OperationFactory;
 import redhood.v5.repository.NumberRepository;
+import redhood.v5.repository.NumberRespoistoryException;
 import redhood.v5.ui.UI;
-
-import java.io.IOException;
 
 public class CalculatorApp {
     private final Inputs inputs;
@@ -24,23 +23,17 @@ public class CalculatorApp {
         this.ui = ui;
     }
 
-    public void execute() throws IOException {
-        String operator;
+    public void execute()  {
         try {
-            operator = inputs.getOperator();
-        } catch (InvalidInputExcetion e) {
+            String operator = inputs.getOperator();
+            double[] numbers = numberRepository.getNumber();
+            Operation operation = operationFactory.getInstance(operator);
+            double result = operation.execute(numbers);
+            ui.showMessage("the result is" + result);
+        }
+        catch (NumberRespoistoryException | InvalidOperatioException | InvalidInputExcetion e) {
             ui.showMessage("Error Occured"+e.getMessage());
             return;
         }
-        double []numbers= numberRepository.getNumber();
-        Operation operation=operationFactory.getInstance(operator);
-        double result;
-        try {
-            result = operation.execute(numbers);
-        } catch (InvalidOperatioException e) {
-            ui.showMessage("Error Occured"+e.getMessage());
-            return;
-        }
-        ui.showMessage("the result is" + result);
     }
 }

@@ -9,7 +9,7 @@ import redhood.v5.ui.CmdLineUI;
 import redhood.v5.ui.UI;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
 
         Inputs inputs=new CommandLineInput(args);
         NumberRepository numberRepository=new FileNumberRepository();
