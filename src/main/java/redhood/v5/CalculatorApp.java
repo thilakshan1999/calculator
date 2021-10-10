@@ -1,6 +1,7 @@
 package redhood.v5;
 
 import redhood.v5.input.Inputs;
+import redhood.v5.input.InvalidInputExcetion;
 import redhood.v5.operation.InvalidOperatioException;
 import redhood.v5.operation.Operation;
 import redhood.v5.operation.OperationFactory;
@@ -24,10 +25,16 @@ public class CalculatorApp {
     }
 
     public void execute() throws IOException {
-        String operator=inputs.getOperator();
+        String operator;
+        try {
+            operator = inputs.getOperator();
+        } catch (InvalidInputExcetion e) {
+            ui.showMessage("Error Occured"+e.getMessage());
+            return;
+        }
         double []numbers= numberRepository.getNumber();
         Operation operation=operationFactory.getInstance(operator);
-        double result= 0;
+        double result;
         try {
             result = operation.execute(numbers);
         } catch (InvalidOperatioException e) {
